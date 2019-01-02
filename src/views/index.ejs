@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
+        crossorigin="anonymous" />
+    <title>Crawler simple</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="text-center">Search in google</h1>
+        <form action="/" method="post">
+            <div class="form-group">
+                <input type="text" name="search" class="form-control" placeholder="Type what search wish" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="search" class="btn btn-block btn-primary" />
+            </div>
+        </form>
+        <% if (resultsSearch != null) { %>
+            <section>
+                    <h3>Results:</h3>
+                    <ul style="list-style: none; margin-left: -40px">
+                        <% resultsSearch.map(result => {%>
+                            <li>
+                                <a href="<%= result.link %>" target="_blank"><%= result.title %></a>
+                            </li>
+                        <% }) %>
+                    </ul>
+                </section>
+        <% } %>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
